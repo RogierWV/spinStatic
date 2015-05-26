@@ -7,7 +7,7 @@
 function getCurBattery(callback) {
     var data;
     jQuery.ajax({
-        url: "http://idp-api.herokuapp.com/spin/batterij",
+        url: "http://idp-api.herokuapp.com/spin/latest/batterij",
         type: "GET",
         dataType: 'json',
         success: function (resultData) {
@@ -24,7 +24,7 @@ function getCurBattery(callback) {
 function getCurMode(callback) {
     var data;
     jQuery.ajax({
-        url: "http://idp-api.herokuapp.com/spin/mode",
+        url: "http://idp-api.herokuapp.com/spin/latest/mode",
         type: "GET",
         dataType: 'json',
         success: function (resultData) {
@@ -44,14 +44,14 @@ function insertData()
 
     getCurBattery(function (data) {
         batterij.each(function () {
-             $(this).append("<h1>"+ data[0]['batterij'] +"%</h1>");
+             $(this).append("<h1>"+ data +"%</h1>");
         });
 
     });
 
    getCurMode(function (modeData) {
 
-        modus.append("<h1>"+ modeData[0]['mode'] +"</h1>");
+        modus.append("<h1>"+ modeData +"</h1>");
     });
 }
 
