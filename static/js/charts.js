@@ -10,7 +10,7 @@ var pieData;
 function getBattery(callback) {
     var data;
     jQuery.ajax({
-        url: "http:idp-api.herokuapp.com/spin/archive/batterij",
+        url: "http://idp-api.herokuapp.com/spin/archive/batterij",
         type: "GET",
         dataType: 'json',
         success: function (resultData) {
@@ -28,7 +28,7 @@ function getBattery(callback) {
 function getModes(callback) {
     var data;
     jQuery.ajax({
-        url: "http:idp-api.herokuapp.com/spin/archive/mode",
+        url: "http://idp-api.herokuapp.com/spin/archive/mode",
         type: "GET",
         dataType: 'json',
         success: function (resultData) {

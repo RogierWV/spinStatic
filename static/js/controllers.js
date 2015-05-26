@@ -2,7 +2,7 @@ var Knightspider = angular.module('phonecatControllers', []);
 
 Knightspider.controller('PhoneListCtrl', ['$scope', '$http','$sce',
     function ($scope, $http, $sce) {
-        $http.get('http://141.252.16.105/develop/api/v1/blogs').success(function(data) {
+        $http.get('http://idp-api.herokuapp.com/blog').success(function(data) {
             $scope.posts = data;
         }).
         error(function() {
@@ -22,7 +22,7 @@ Knightspider.controller('PhoneDetailCtrl', ['$scope', '$http', '$routeParams','$
          $scope.toTrustedHTML = function( html ){
             return $sce.trustAsHtml( html );
         }
-    $http.get('http://141.252.16.105/develop/api/v1/blogs/post/'+ $routeParams.postId).success(function(data)
+    $http.get('http://idp-api.herokuapp.com/blog/'+ $routeParams.postId).success(function(data)
         {
             //console.log(data);
             $scope.post = data[0];
@@ -67,11 +67,11 @@ Knightspider.controller('CarouselDemoCtrl', function ($scope) {
   $scope.myInterval = 5000;
   var slides = $scope.slides = [];
   slides.push({
-      image: 'http://141.252.16.105/develop/img/projectgroep.jpg',
+      image: '/img/projectgroep.jpg',
 
     })
       slides.push({
-      image: 'http://141.252.16.105/develop/img/web.jpg',
+      image: '/img/web.jpg',
         text: 'Volledig online via Website en WebApp'
     })
 });
