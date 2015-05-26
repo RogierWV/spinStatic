@@ -1,3 +1,11 @@
 CACHE MANIFEST
-# 28-4-2015 v1.0
-/angular/index.html
+# 26-5-2015 v2
+CACHE:
+/index.html
+/js/*.js
+/css/*.css
+/partials/*.html
+/img/*.jpg
+
+NETWORK:
+*
