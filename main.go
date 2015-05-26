@@ -14,8 +14,6 @@ func Static(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 }
 
 func main() {
-	conn,_ = sql.Open("postgres", os.Getenv("DATABASE_URL"))
-	defer conn.Close()
 	router := httprouter.New()
 	router.GET("/*file", Static)
 	port := os.Getenv("PORT")
