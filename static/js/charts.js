@@ -47,7 +47,7 @@ function generateData() {
     var data = getBattery(function (data) {
         chartData = new Array(data.length);
         for (var i = 0; i < data.length; i++) {
-            chartData[i] = parseInt(data[i]["batterij"]);
+            chartData[i] = parseInt(data[i]);
         }
         console.log(chartData);
         createChart();
@@ -64,12 +64,12 @@ function generatePieData() {
     var data = getModes(function (data) {
         pieData = [0,0,0]
         for (var i = 0; i < data.length; i++) {
-            if(data[i]["mode"] == "dansen")
+            if(data[i] == "dansen")
             {
                 pieData[0]++;
                 console.log(pieData[0]);
             }
-            else if(data[i]["mode"] == "lopen")
+            else if(data[i] == "lopen")
             {
                 pieData[1]++;
             }

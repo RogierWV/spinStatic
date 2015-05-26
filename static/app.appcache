@@ -2,7 +2,13 @@ CACHE MANIFEST
 # 26-5-2015 v2
 CACHE:
 /index.html
-/js/*
+/js/app.js
+/js/apiCall.js
+/js/Chart.js
+/js/charts.js
+/js/controllers.js
+/js/currentData.js
+/js/ui-bootstrap-tpls-0.12.1.js
 /css/*
 /partials/*
 /img/*
