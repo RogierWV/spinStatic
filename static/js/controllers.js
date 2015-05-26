@@ -25,7 +25,7 @@ Knightspider.controller('PhoneDetailCtrl', ['$scope', '$http', '$routeParams','$
     $http.get('http://idp-api.herokuapp.com/blog/'+ $routeParams.postId).success(function(data)
         {
             //console.log(data);
-            $scope.post = data[0];
+            $scope.post = data;
             $scope.postId = $routeParams.postId;
         });
     }]);
