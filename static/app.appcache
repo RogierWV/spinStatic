@@ -2,10 +2,10 @@ CACHE MANIFEST
 # 26-5-2015 v2
 CACHE:
 /index.html
-/js/*.js
-/css/*.css
-/partials/*.html
-/img/*.jpg
+/js/*
+/css/*
+/partials/*
+/img/*
 
 NETWORK:
 *
