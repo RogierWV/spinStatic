@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"log"
 	"os"
-	"io"
 	"fmt"
 )
 
