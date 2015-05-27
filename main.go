@@ -1,4 +1,4 @@
-package main
+/*package main
 
 import (
 	"github.com/julienschmidt/httprouter"
@@ -21,4 +21,21 @@ func main() {
 	}
 	fmt.Printf("Starting server at localhost:%s...", port)
 	log.Fatal(http.ListenAndServe(":"+port, router))
+}*/
+
+package main
+
+import (
+	"log"
+	"net/http"
+)
+
+func main() {
+	http.Handle("/", http.FileServer(http.Dir("static")))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+	log.Printf("Listening on port %s...", port)
+	http.ListenAndServe(":"+port, nil)
 }
