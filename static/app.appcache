@@ -3,7 +3,7 @@ CACHE MANIFEST
 CACHE:
 /index.html
 /js/app.js
-/js/apiCall.js
+/js/apiCalls.js
 /js/Chart.js
 /js/charts.js
 /js/controllers.js

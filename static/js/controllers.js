@@ -75,3 +75,14 @@ Knightspider.controller('CarouselDemoCtrl', function ($scope) {
         text: 'Volledig online via Website en WebApp'
     })
 });
+
+Knightspider.controller('analyticsCtrl', function($scope) {
+  $scope.logs = [];
+  $scope.evsrc  = new EventSource("https://idp-api.herokuapp.com/events");
+  $scope.evsrc.onmessage = function (ev) {
+    $scope.logs.push(ev.data);
+  }
+  $scope.evsrc.onerror = function (ev) {
+    console.log("readyState = " + ev.currentTarget.readyState);
+  }
+});
