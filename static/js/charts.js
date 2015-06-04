@@ -145,7 +145,7 @@ function createChart()
     var options = {scaleShowLabels : false};
 
     var buyerData = {
-        labels : ["latest","-1","-2","-3","-4","-5"],
+        labels : ["-5","-4","-3","-2","-1","latest"],
         datasets : [
             {
                 fillColor : "rgba(172,194,132,0.4)",
