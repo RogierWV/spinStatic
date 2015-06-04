@@ -78,7 +78,7 @@ Knightspider.controller('CarouselDemoCtrl', function ($scope) {
 
 Knightspider.controller('analyticsCtrl', function ($scope) {
   $scope.logs = ["test 1", "test 2"];
-  $scope.logs = "test 3";
+  $scope.logs.push("test 3");
   $scope.evsrc  = new EventSource("https://idp-api.herokuapp.com/subscribe");
   $scope.evsrc.onmessage = function (ev) {
     $scope.logs.push(ev.data);
