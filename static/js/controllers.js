@@ -84,6 +84,7 @@ Knightspider.controller('analyticsCtrl', function ($scope) {
     $scope.logs.unshift(ev.data);
   }, false);
   $scope.evsrc.onerror = function (ev) {
+    debugger;
     console.log("readyState = " + ev.currentTarget.readyState);
   }
 });
