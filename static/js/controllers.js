@@ -79,11 +79,11 @@ Knightspider.controller('CarouselDemoCtrl', function ($scope) {
 Knightspider.controller('analyticsCtrl', function ($scope) {
   $scope.logs = ["test 1", "test 2"];
   $scope.logs.push("test 3");
-  $scope.evsrc  = new EventSource("https://idp-api.herokuapp.com/subscribe");
-  $scope.evsrc.addEventListener("log", function (ev) {
+  var evsrc  = new EventSource("https://idp-api.herokuapp.com/subscribe");
+  evsrc.addEventListener("log", function (ev) {
     $scope.logs.unshift(ev.data);
   }, false);
-  $scope.evsrc.onerror = function (ev) {
+  evsrc.onerror = function (ev) {
     debugger;
     console.log("readyState = " + ev.currentTarget.readyState);
   }
