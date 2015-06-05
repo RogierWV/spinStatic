@@ -89,9 +89,7 @@ Knightspider.controller('analyticsCtrl', function ($scope,$http) {
   }*/
   var timer = setInterval(function() {
     $http.get('http://idp-api.herokuapp.com/log').success(function(data) {
-            $scope.logs = data.map(function(val){
-              return val["log"];
-            });
+            $scope.logs = data;
         }).
         error(function() {
             $scope.error = true;
