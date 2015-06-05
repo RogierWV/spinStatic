@@ -77,8 +77,7 @@ Knightspider.controller('CarouselDemoCtrl', function ($scope) {
 });
 
 Knightspider.controller('analyticsCtrl', function ($scope,$http) {
-  $scope.logs = ["test 1", "test 2"];
-  $scope.logs.push("test 3");
+  $scope.logs = [];
   $scope.updateLogs = function(){
     $http.get('http://idp-api.herokuapp.com/log').success(function(data) {
         $scope.logs = data;
