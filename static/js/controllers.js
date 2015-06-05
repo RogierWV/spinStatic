@@ -76,15 +76,23 @@ Knightspider.controller('CarouselDemoCtrl', function ($scope) {
     })
 });
 
-Knightspider.controller('analyticsCtrl', function ($scope) {
+Knightspider.controller('analyticsCtrl', function ($scope,$http) {
   $scope.logs = ["test 1", "test 2"];
   $scope.logs.push("test 3");
-  var evsrc  = new EventSource("https://idp-api.herokuapp.com/subscribe");
+  /*var evsrc  = new EventSource("https://idp-api.herokuapp.com/subscribe");
   evsrc.addEventListener("log", function (ev) {
     $scope.logs.unshift(ev.data);
   }, false);
   evsrc.onerror = function (ev) {
     debugger;
     console.log("readyState = " + ev.currentTarget.readyState);
-  }
+  }*/
+  var timer = setInterval(function() {
+    $http.get('http://idp-api.herokuapp.com/log').success(function(data) {
+            $scope.logs = data;
+        }).
+        error(function() {
+            $scope.error = true;
+        });
+  }, 5000)
 });
