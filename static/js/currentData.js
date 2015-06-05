@@ -44,14 +44,14 @@ function insertData()
 
     getCurBattery(function (data) {
         batterij.each(function () {
-             $(this).append("<h1>"+ data +"%</h1>");
+             $(this).html("<h1>"+ data +"%</h1>");
         });
 
     });
 
    getCurMode(function (modeData) {
 
-        modus.append("<h1>"+ modeData +"</h1>");
+        modus.html("<h1>"+ modeData +"</h1>");
     });
 }
 
