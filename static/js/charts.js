@@ -6,7 +6,6 @@ var chart;
 var chartData;
 var pieData;
 
-
 function getBattery(callback) {
     var data;
     jQuery.ajax({
