@@ -82,11 +82,15 @@
 </div>
 
 <script>
+  insertData();
+  generatePieData();
+  generateData();
+  createrad();
+  Chart.defaults.global.animation = false;
   setInterval(function() {
     insertData();
     generatePieData();
     generateData();
     createrad();
-    Chart.defaults.global.animation = false;
   }, 10000);
 </script>
