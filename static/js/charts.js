@@ -87,7 +87,8 @@ function generatePieData() {
 function createPie(datas)
 {
     console.log(datas);
-    var ctx = document.getElementById('myChart').getContext('2d');
+    var canvas = document.getElementById('myChart');
+    var ctx = canvas.getContext('2d');
     var data = [
         {
             value: datas[0],
@@ -137,7 +138,7 @@ function createPie(datas)
     }
 
     // clear canvas
-    ctx.clearRect(0, 0, ctx.parentNode.width, ctx.parentNode.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     // For a pie chart
     var myPieChart = new Chart(ctx).Pie(data,options);
 }
@@ -158,15 +159,17 @@ function createChart()
             }
         ]
     };
-    var buyers = document.getElementById('buyers').getContext('2d');
+    var canvas = document.getElementById('buyers');
+    var buyers = canvas.getContext('2d');
     // clear canvas
-    buyers.clearRect(0, 0, ctx.parentNode.width, ctx.parentNode.height);
+    buyers.clearRect(0, 0, canvas.width, canvas.height);
     chart = new Chart(buyers).Line(buyerData, options);
 }
 
 function createrad()
 {
-    var ctx = document.getElementById('ding').getContext('2d');
+    var canvas = document.getElementById('ding');
+    var ctx = canvas.getContext('2d');
     var options = {
         //Boolean - Whether to show lines for each scale point
         scaleShowLine : true,
@@ -249,7 +252,7 @@ function createrad()
         ]
     };
     // clear canvas
-    ctx.clearRect(0, 0, ctx.parentNode.width, ctx.parentNode.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     var myRadarChart = new Chart(ctx).Radar(data, options);
 }
