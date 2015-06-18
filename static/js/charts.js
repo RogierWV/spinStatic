@@ -2,9 +2,8 @@
  * Created by remy on 22/04/15.
  */
 
-var chart;
-var chartData;
-var pieData;
+var chart, pieChart, radChart;
+var chartData, pieData;
 
 function getBattery(callback) {
     var data;
@@ -140,7 +139,12 @@ function createPie(datas)
     // clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     // For a pie chart
-    var myPieChart = new Chart(ctx).Pie(data,options);
+    pieChart = new Chart(ctx).Pie(data,options);
+
+    setInterval(function(){
+        generatePieData();
+        pieChart.update();
+    }, 5000);
 }
 
 function createChart()
@@ -254,5 +258,5 @@ function createrad()
     // clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    var myRadarChart = new Chart(ctx).Radar(data, options);
+    window.myRadarChart = new Chart(ctx).Radar(data, options);
 }
