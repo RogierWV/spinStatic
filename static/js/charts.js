@@ -137,7 +137,7 @@ function createPie(datas)
     }
 
     // clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, ctx.parentNode.width, ctx.parentNode.height);
     // For a pie chart
     var myPieChart = new Chart(ctx).Pie(data,options);
 }
@@ -160,7 +160,7 @@ function createChart()
     };
     var buyers = document.getElementById('buyers').getContext('2d');
     // clear canvas
-    buyers.clearRect(0, 0, canvas.width, canvas.height);
+    buyers.clearRect(0, 0, ctx.parentNode.width, ctx.parentNode.height);
     chart = new Chart(buyers).Line(buyerData, options);
 }
 
@@ -249,7 +249,7 @@ function createrad()
         ]
     };
     // clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, ctx.parentNode.width, ctx.parentNode.height);
 
     var myRadarChart = new Chart(ctx).Radar(data, options);
 }
