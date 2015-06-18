@@ -135,6 +135,9 @@ function createPie(datas)
         animateScale : false
 
     }
+
+    // clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     // For a pie chart
     var myPieChart = new Chart(ctx).Pie(data,options);
 }
@@ -156,7 +159,9 @@ function createChart()
         ]
     };
     var buyers = document.getElementById('buyers').getContext('2d');
-     chart = new Chart(buyers).Line(buyerData, options);
+    // clear canvas
+    buyers.clearRect(0, 0, canvas.width, canvas.height);
+    chart = new Chart(buyers).Line(buyerData, options);
 }
 
 function createrad()
@@ -243,5 +248,8 @@ function createrad()
             }
         ]
     };
+    // clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     var myRadarChart = new Chart(ctx).Radar(data, options);
 }
