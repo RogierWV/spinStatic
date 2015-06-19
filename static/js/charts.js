@@ -141,10 +141,10 @@ function createPie(datas)
     // For a pie chart
     pieChart = new Chart(ctx).Pie(data,options);
 
-    setInterval(function(){
+    /*setInterval(function(){
         generatePieData();
         pieChart.update();
-    }, 5000);
+    }, 5000);*/
 }
 
 function createChart()
