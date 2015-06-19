@@ -36,11 +36,26 @@ function getCurMode(callback) {
     });
 }
 
+function getCurSlope(cb) {
+    jQuery.ajax({
+        url: 'http://idp-api.herokuapp.com/spin/latest/helling',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            cb(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            cb(null);
+            console.log(errorThrown);
+        }
+    });
+}
+
 function insertData()
 {
     var modus = $(".modus");
     var batterij = $(".batterij");
-
+    var helling = $(".helling");
 
     getCurBattery(function (data) {
         batterij.each(function () {
@@ -53,6 +68,10 @@ function insertData()
 
         modus.html("<h1>"+ modeData +"</h1>");
     });
+
+   getCurSlope(function (data) {
+        helling.html("<h1>"+data+"</h1>")
+   });
 }
 
 
