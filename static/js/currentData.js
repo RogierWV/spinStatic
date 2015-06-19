@@ -70,7 +70,7 @@ function insertData()
     });
 
    getCurSlope(function (data) {
-        helling.html("<h1>"+data+"</h1>")
+        helling.html("<h1>"+data+"&deg;</h1>")
    });
 }
 
